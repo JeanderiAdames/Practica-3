@@ -1,0 +1,39 @@
+!
+!   GAMESS Calculation input file
+!   molecula de prueba JAAM
+!
+ $CONTRL SCFTYP=RHF MAXIT=200 RUNTYP=OPTIMIZE
+         COORD=UNIQUE MULT=1 
+         ICHARG=0  
+         DFTTYP=B3LYP
+         MOLPLT=.FALSE. PLTORB=.FALSE.  $END
+ $SYSTEM TIMLIM=2879 MWORDS=250  $END
+
+ $FORCE METHOD=SEMINUM NVIB=2 $END 
+ $STATPT OPTTOL=0.0005 NSTEP=999 $END
+ $STATPT IHREP=0 HSSEND=.TRUE.  $END
+
+ $DFT    METHOD=GRID  NLEB=590  $END
+
+ $BASIS  GBASIS=N31 NGAUSS=6
+         NDFUNC=1   NPFUNC=0  $END
+
+ $SCF    DIRSCF=.T. $END
+ $GUESS  GUESS=HUCKEL  $END
+
+ $DATA
+   molecula de prueba JAAM
+  Cs
+
+C     6.0     0.78     1.00     0.00
+C     6.0    -0.36     0.30    -0.00
+C     6.0    -0.41    -1.19    -0.00
+H     1.0     1.74     0.51     0.00
+H     1.0     0.77     2.08     0.00
+H     1.0    -1.31     0.83    -0.00
+H     1.0     0.08    -1.60     0.89
+H     1.0    -1.44    -1.54    -0.00
+ $END
+
+
+! Customizations after this line are persisted when using Do More Calculations
